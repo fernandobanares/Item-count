@@ -1,25 +1,20 @@
-import Button from '../Button/Button';
-import './Card.css';
+import Button from "../Button/Button";
+import "./card.css";
 
-function Card(props){
-
-    return(
-      <div className='main'>
-        <div className='card'>
-          <div className='card-img'>
-            <img src={props.data.imgurl} alt="imagen" />
-          </div>
-          <div className='card-detail'>
-            <h2>{props.data.name}</h2>
-            <p>
-              {props.data.description}
-            </p>
-            <h3>{props.data.price}</h3>
-            <Button type="alert" text="Ver más"/>
-          </div>
-        </div>
+function Card({ title, price, img, category,id }) {
+  return (
+    <div className="card">
+      <div className="card-img">
+        <img src={img} alt="imagen" />
       </div>
-    )
-  }
+      <div className="card-detail">
+        <h2>{title}</h2>
+        <p>{category}</p>
+        <h3>$ {price}</h3>
+        <Button type text="Ver más"></Button>
+      </div>
+    </div>
+  );
+}
 
-  export default Card;
+export default Card;

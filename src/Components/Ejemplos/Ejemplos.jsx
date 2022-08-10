@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../Card/Card";
-import CardWithObject from "../Card/CardWithObject";
+import CardWhitObject from "../Card/CardWhitObject"
 import Button from "../Button/Button";
 import ButtonChildren from "../Button/ButtonChildren";
 
