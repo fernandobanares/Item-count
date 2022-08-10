@@ -25,7 +25,7 @@ const ItemListContainer = () => {
   //console.log(products);
 
   return (
-    <div className="container mx-auto mt-5">
+    <div className="ItemListContainer">
       
       <ItemList item={item} />
       

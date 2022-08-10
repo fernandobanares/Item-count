@@ -55,3 +55,8 @@ ul{
     transform: rotate(360deg);
   }
 }
+
+.ItemListContainer{
+  display:inline-table;
+  
+}

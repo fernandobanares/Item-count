@@ -3,14 +3,21 @@ import "./App.css";
 import ItemDetailContainer from "./Components/ItemDetail/ItemDetailContainer";
 import ItemListContainer from "./Components/ItemList/ItemListContainer";
 import NavBar from './Components/NavBar/NavBar';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <NavBar />
+        <Routes>     
       {/* <Ejemplos /> */}
-       <ItemListContainer />
+      <Route path='/' element={<ItemListContainer/>} />
+      <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
+      <Route path="*" element={<h1>No encontrado</h1>} />
       {/* <ItemDetailContainer itemid={55555} /> */}
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
