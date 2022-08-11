@@ -7,18 +7,18 @@ import Card from "../Card/CardWhitObject";
  function traerProducto() {
   return new Promise((resolve => {
     setTimeout(() => {
-      resolve(item)}, 2000);
+      resolve(item[0])}, 2000);
     }))
   
 }
 
 /* Crear un estado para guardar un objeto/item/producto */
-const ItemDetailContainer = ({ itemid }) => {
-  const [item, setItem] = useState([])
+const ItemDetailContainer = () => {
+  const [data, setData] = useState([])
   
   useEffect(() => {
     traerProducto()
-      .then(products => { setItem(products[0])
+      .then(respuesta => { setData(respuesta)
       })
   }, [])
 
@@ -27,7 +27,13 @@ const ItemDetailContainer = ({ itemid }) => {
       {/* Crear componente ItemDetail y enviarle por props los datos del producto
        que guardamos en el estado (nombre, precio, imagen, etc.)          
       */}
-    <ItemDetail item={item} />
+    <ItemDetail
+    key={data.id}
+    img={data.img}
+    title={data.title}
+    categoria={data.category}
+    precio={data.price}
+    />
     </div>
   );
 }
