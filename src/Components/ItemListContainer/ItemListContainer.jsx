@@ -18,14 +18,19 @@ const ItemListContainer = () => {
   useEffect(() => {
     traerProductos()
       .then((respuesta) => {
-        if (idCategory === undefined) setItem(respuesta)
-        
         let filtrados = respuesta.filter( elemento => elemento.category === idCategory)
+        if (idCategory === undefined) {
+        setItem(respuesta)
+        }
+        else{
+        setItem(filtrados)
+        }
+        
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [idCategory]);
 
   //console.log(products);
 
