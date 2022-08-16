@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import itemsData from "../../data/item";
-import ItemList from "./ItemList";
+import itemsData from "../../data/productos";
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom"
 // import Card from "../Card/Card";
 
 function traerProductos() {
@@ -12,10 +13,14 @@ function traerProductos() {
 const ItemListContainer = () => {
   const [item, setItem] = useState([]);
 
+  const idCategory = useParams().idCategory
+
   useEffect(() => {
     traerProductos()
       .then((respuesta) => {
-        setItem(respuesta);
+        if (idCategory === undefined) setItem(respuesta)
+        
+        let filtrados = respuesta.filter( elemento => elemento.category === idCategory)
       })
       .catch((error) => {
         console.log(error);

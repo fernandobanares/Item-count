@@ -1,5 +1,6 @@
 import Button from "../Button/Button";
 import "./card.css";
+import { Link } from "react-router-dom";
 
 function Card({ title, price, img, category,id }) {
   return (
@@ -11,7 +12,7 @@ function Card({ title, price, img, category,id }) {
         <h2>{title}</h2>
         <p>{category}</p>
         <h3>$ {price}</h3>
-        <Button type text="Ver más"></Button>
+        <Link to={`/detalle/${id}`}>Ver más</Link>
       </div>
     </div>
   );

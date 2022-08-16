@@ -7,16 +7,11 @@ function NavBar() {
     color:"violet"
   }
 
-  const menu = [{ url: "/", title: "Homepage"},{ url: "/detalle/item1", title: "Detalle 1"},{ url: "/detalle/item2", title: "Detalle 2"} ]
+  const menu = [{ url: "/", title: "Homepage"},{ url: "/detalle/1", title: "Detalle 1"},{ url: "/detalle/2", title: "Detalle 2"},{ url: "/category", title: "Categoria"}]
   return (
     <div className="nav-bar">
-      {/* <ul className="nav-menu">
-        <li>Inicio</li>
-        <li>Categoría B</li>
-        <li>Categoría A</li>
-        <li>Categoría C</li>
-      </ul> */}
-      {menu.map (enlace => <NavLink to={enlace.url} style = {({isActive}) => (isActive ? { color: "violet"} : undefined)}>{enlace.title}</NavLink>)}
+      {menu.map (enlace => <NavLink to={enlace.url}>{enlace.title}</NavLink>)}
+      {/* style = {({isActive}) => (isActive ? { color: "violet"} : undefined)} */}
     </div>
   );
 }

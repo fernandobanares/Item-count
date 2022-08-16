@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../Card/Card'
 
+
 const ItemList =(props) =>{
   return (
     <div>{
@@ -8,6 +9,7 @@ const ItemList =(props) =>{
       return (
       <Card
         key={singleMovie.id}
+        id={singleMovie.id}
         title={singleMovie.title}
         category={singleMovie.category}
         img={singleMovie.img}
