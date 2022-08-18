@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import itemsData from "../../data/productos";
 import ItemList from "../ItemList/ItemList";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 // import Card from "../Card/Card";
 
 function traerProductos() {

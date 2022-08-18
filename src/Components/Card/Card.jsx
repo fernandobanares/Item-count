@@ -1,8 +1,9 @@
 import Button from "../Button/Button";
 import "./card.css";
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
 
-function Card({ title, price, img, category,id }) {
+function Card({ title, price, img, category,id,stock }) {
   return (
     <div className="card">
       <div className="card-img">
@@ -12,7 +13,12 @@ function Card({ title, price, img, category,id }) {
         <h2>{title}</h2>
         <p>{category}</p>
         <h3>$ {price}</h3>
-        <Link to={`/detalle/${id}`}>Ver más</Link>
+        <Link to={`/detalle/${id}`}>
+        <Button 
+        // onTouch={() => alert (`Clickeando el item:${title}`)} 
+        text="Ver más"></Button>
+        </Link>
+        {/* <ItemCount initial={1} stock={stock} text="Agregar al carrito"/> */}
       </div>
     </div>
   );

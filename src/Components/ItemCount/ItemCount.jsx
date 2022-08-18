@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function ItemCount(props){
 // console.log(props.stock);/* Valor máximo del contador */
-  const [cantidad, setCantidad] = React.useState(1);
+  const [cantidad, setCantidad] = useState(props.initial);
   
   const handleIncrement = () =>{
     if (cantidad < props.stock){
@@ -20,24 +20,27 @@ function ItemCount(props){
     }
   }
 
-  const onAdd = () => {
-    if (props.stock > 0) {
-      alert(`Agregaste ${cantidad} unidades al carrito.`)
-  }
-  else {
-      alert(`No hay suficiente stock de este producto.`)
-  }
-}
-  
+//   const onAdd = () => {
+//     if (props.stock > 0) {
+//       alert(`Agregaste ${cantidad} unidades al carrito.`)
+//   }
+//   else {
+//       alert(`No hay suficiente stock de este producto.`)
+//   }
+// }
+// const handleClick = () => {
+//   props.onAdd(cantidad)
+// }
 
   return(
     <div>
       <h3>Click Counter</h3>
       <button onClick={handleIncrement}>+</button>
       {/* <button onClick={ ()=>setClicks(0)}>Reset</button> */}
+      <span>{cantidad}</span>
       <button onClick={handleDecrement}>-</button>
-      <button onClick={onAdd}>Finalizar Compra</button>
-      <h3>Clicks: {cantidad}</h3>
+      <button onClick={props.onAdd}>{props.text}</button>
+      {/* <h3>Clicks: {cantidad}</h3> */}
 
     </div>
   )

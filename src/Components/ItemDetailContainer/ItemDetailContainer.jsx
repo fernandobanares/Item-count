@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 // import ItemDetail from "./ItemDetail";
 import itemsData from "../../data/productos";
 import { useParams } from "react-router-dom"
+import CardDetail from "../ItemDetail/ItemDetail2";
  
 const ItemDetailContainer = () => {
   /* Crear un estado para guardar un objeto/item/producto */
@@ -31,40 +32,30 @@ const ItemDetailContainer = () => {
   }, [])
 
     return (
-      <div className="card">
-      <div className="card-img">
-        <img src={item.img} alt="imagen" />
-      </div>
-      <div className="card-detail">
-        <h2>{item.title}</h2>
-        <p>{item.category}</p>
-        <h3>$ {item.price}</h3>
-        {/* <Button type text="Ver más"></Button> */}
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-      // desafio
-    // <div className="main">
-    //   {/* Crear componente ItemDetail y enviarle por props los datos del producto
-    //    que guardamos en el estado (nombre, precio, imagen, etc.)          
-    //   */}
-    // <ItemDetail
-    // key={data.id}
-    // img={data.img}
-    // title={data.title}
-    // categoria={data.category}
-    // precio={data.price}
-    // />
+          //   {/* <div className="card-img">
+    //     <img src={item.img} alt="imagen" />
+    //   </div>
+    //   <div className="card-detail">
+    //     <h2>{item.title}</h2>
+    //     <p>{item.category}</p>
+    //     <h3>$ {item.price}</h3>
+    //     {/* <Button type text="Ver más"></Button> */}
+    //   </div> */}
     // </div>
+  
+    <div className="main">
+      {/* Crear componente ItemDetail y enviarle por props los datos del producto
+       que guardamos en el estado (nombre, precio, imagen, etc.)          
+      */}
+    <CardDetail
+    id={item.id}
+    img={item.img}
+    title={item.title}
+    categoria={item.category}
+    precio={item.price}
+    stock={item.stock}
+    />
+    </div>
   );
 }
 

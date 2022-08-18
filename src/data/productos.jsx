@@ -2,7 +2,7 @@ const itemsData = [
     {
       id: 1,
       title: "Flavor of Green Tea Over Rice (Ochazuke no aji)",
-      price: 27,
+      price: 30,
       category: "Drama",
       country: "Ukraine",
       img: "http://dummyimage.com/280x260.png/cc0000/ffffff",
