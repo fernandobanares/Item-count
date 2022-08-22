@@ -39,7 +39,7 @@ function ItemCount(props){
       {/* <button onClick={ ()=>setClicks(0)}>Reset</button> */}
       <span>{cantidad}</span>
       <button onClick={handleDecrement}>-</button>
-      <button onClick={props.onAdd}>{props.text}</button>
+      <button onClick={()=>props.onAdd(cantidad)}>{props.text}</button>
       {/* <h3>Clicks: {cantidad}</h3> */}
 
     </div>

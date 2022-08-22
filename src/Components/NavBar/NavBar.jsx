@@ -1,6 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import { Link, NavLink } from "react-router-dom";
+import carrito from "../../Images/carrito.png"
 
 
 
@@ -15,7 +16,7 @@ function NavBar() {
     <div className="nav-bar">
       {menu.map (enlace => <NavLink to={enlace.url}>{enlace.title}</NavLink>)}
       {/* style = {({isActive}) => (isActive ? { color: "violet"} : undefined)} */}
-      <img src="../../../public/carrito.png" alt="carrito" />
+      <img src={carrito} alt="carrito" />
     </div>
     
   );

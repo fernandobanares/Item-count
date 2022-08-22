@@ -5,16 +5,21 @@ import {useState} from "react";
 import Swal from "sweetalert2";
 import{Link} from "react-router-dom";
 
-function ItemDetail({id, title, price, img, category, stock}) {
+import { useContext } from "react";
+import { cartContext } from "../../store/cartContext";
 
+function ItemDetail({id, title, price, img, category, stock}) {
+  const { addToCart } = useContext(cartContext)
   const [quantityInCart, setQuantityInCart] = useState(0)
 
   function handleAdd(cantidad){
-  console.log("agregar al carrito", cantidad)
-  setQuantityInCart(cantidad)
-  Swal.fire({
+    const itemToCart ={id, title, price, img, category, stock }
+    addToCart(itemToCart, cantidad)
+    
+    setQuantityInCart(cantidad)
+    Swal.fire({
     position: 'top-end',
-    icon: 'succes',
+    icon: 'success',
     title:`Has agregado ${cantidad}, de ${title} al carrito`,
     showConfirmButton: false,
     timer: 1500
