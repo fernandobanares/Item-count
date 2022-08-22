@@ -32,31 +32,33 @@ export function CartProvider ({children}){
         }
     }
 
-// funcion para remover un item por su id
-// function removeItem(data){
-//     const itemRemove = findItem(data.id)
-//     const indexItem = copyCart.indexOf(itemR
-//     copyCart.splice(indexItem,1)
-//     setCart(copyCart)
-//     console.log(copyCart)}
-
-// funcion vaciar al carrito
-// function removeAll(){
-//     copyCart = []
-//     setCart(copyCart)
-//     console.log(copyCart)
-
- function isInCart(id){
-    return ( cart.some(itemInCart => itemInCart.id === id))
+    // funcion para remover un item por su id
+    function removeItem(item){
+        const itemRemove = findItem(item.id)
+        const indexItem = copyCart.indexOf(itemRemove)
+        copyCart.splice(indexItem,1)
+        setCart(copyCart)
+        console.log(copyCart)
     }
 
-function findItem(id) {
-    return (copyCart.find(item => item.id === Number.id))
-}
+    // funcion vaciar al carrito
+    function removeAll(){
+        copyCart = []
+        setCart(copyCart)
+        console.log(copyCart)
+    }
+    // funcion para revisar si existe el item
+    function isInCart(id){
+        return ( copyCart.some(itemInCart => itemInCart.id === id))
+        }
+    // funcion para buscar un item en base a su id
+    function findItem(id) {
+        return (copyCart.find(item => item.id === Number.id))
+    }
 
            
     return(
-        <cartContext.Provider value={{cart, addToCart}}>
+        <cartContext.Provider value={{cart, addToCart, removeItem, removeAll, findItem}}>
             {children}
         </cartContext.Provider>
     )
